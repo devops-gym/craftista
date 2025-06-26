@@ -1,0 +1,6 @@
+{
+  "version": "1.0.0",	
+  "productsApiBaseUri": "http://localhost:8000",
+  "recommendationBaseUri": "http://localhost:9000",
+  "votingBaseUri": "http://localhost:7000"
+}
