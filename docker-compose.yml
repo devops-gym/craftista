@@ -7,16 +7,19 @@ services:
       dockerfile: Dockerfile
 
     environment:
-      CATALOGUE_URI: $CATALOGUE_URI
-      RECOMMENDATIONS_URI: $RECOMMENDATIONS_URI
-      VOTING_URI: $VOTING_URI
+      PRODUCTS_SERVICE_HOST: $PRODUCTS_SERVICE_HOST
+      PRODUCTS_SERVICE_PORT: $PRODUCTS_SERVICE_PORT
+      RECOMMENDATIONS_SERVICE_HOST: $RECOMMENDATIONS_SERVICE_HOST
+      RECOMMENDATIONS_SERVICE_PORT: $RECOMMENDATIONS_SERVICE_PORT
+      VOTING_SERVICE_HOST: $VOTING_SERVICE_HOST
+      VOTING_SERVICE_PORT: $VOTING_SERVICE_PORT
 
     ports:
       - "3000:3000"
     networks:
       - craftista-network
 
-  recommendation:
+  recommendations:
     build:
       context: ./recommendation
       dockerfile: Dockerfile
@@ -34,7 +37,7 @@ services:
     networks:
       - craftista-network
 
-  catalogue:
+  products:
     build:
       context: ./catalogue
       dockerfile: Dockerfile

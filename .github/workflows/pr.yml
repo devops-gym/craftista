@@ -1,0 +1,33 @@
+name: Pull Request
+
+on:
+  workflow_dispatch:
+  pull_request:
+    types: [opened, reopened, edited, synchronize]
+
+jobs:
+  changes:
+    name: Detect Changes
+    runs-on: ubuntu-2204
+    environment: testing
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Detect Changes
+        id: changes
+        uses: dorny/path-filter@v3
+        with:
+          filters: |
+            frontend: 
+              - 'frontend/**'   
+            voting: 
+              - 'voting/**'
+            recommendation:
+                - 'recommendation/**'
+            catalogue:
+              - 'catalogue/**'
+    outputs:
+      frontend: steps.changes.outputs.frontend
+      voting: steps.changes.outputs.voting
+      recommendation: steps.changes.outputs.recommendation
+      catalogue: steps.changes.outputs.catalogue

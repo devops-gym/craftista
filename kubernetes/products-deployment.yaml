@@ -1,19 +1,19 @@
 apiVersion: apps/v1
 kind: Deployment
 metadata:
-  name: voting
+  name: products
 spec:
   selector:
     matchLabels:
-      app: voting
+      app: products
   template:
     metadata:
       labels:
-        app: voting
+        app: products
     spec:
       containers:
-      - name: voting
-        image: registry.gitlab.com/baddikiran/craftista:voting-1.0.0
+      - name: products
+        image: registry.gitlab.com/baddikiran/craftista:products-1.0.0
         resources:
           requests:
             memory: "128Mi"
@@ -22,4 +22,4 @@ spec:
             memory: "200Mi"
             cpu: "500m"
         ports:
-        - containerPort: 8080
+        - containerPort: 5900
