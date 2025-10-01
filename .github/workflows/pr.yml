@@ -24,10 +24,10 @@ jobs:
               - 'voting/**'
             recommendation:
                 - 'recommendation/**'
-            catalogue:
-              - 'catalogue/**'
+            products:
+              - 'products/**'
     outputs:
       frontend: steps.changes.outputs.frontend
       voting: steps.changes.outputs.voting
       recommendation: steps.changes.outputs.recommendation
-      catalogue: steps.changes.outputs.catalogue
+      products: steps.changes.outputs.products

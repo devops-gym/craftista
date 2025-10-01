@@ -39,7 +39,7 @@ services:
 
   products:
     build:
-      context: ./catalogue
+      context: ./products
       dockerfile: Dockerfile
     ports:
       - "5900:5900"
