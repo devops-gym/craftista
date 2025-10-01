@@ -13,7 +13,20 @@ spec:
     spec:
       containers:
       - name: frontend
-        image: registry.gitlab.com/baddikiran/craftista:frontend-1.0.0``
+        image: registry.gitlab.com/baddikiran/craftista:frontend-1.0.0
+        env:
+        - name: VOTING_HOST
+          value: "voting"
+        - name: VOTING_PORT
+          value: "8080"
+        - name: PRODUCTS_SERVICE_HOST
+          value: "products"
+        - name: PRODUCTS_SERVICE_PORT
+          value: "5900"
+        - name: RECOMMENDATIONS_SERVICE_HOST
+          value: "recommendations"
+        - name: RECOMMENDATIONS_SERVICE_PORT
+          value: "9000"
         resources:
           requests:
             memory: "128Mi"
